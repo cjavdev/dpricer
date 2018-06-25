@@ -1,0 +1,2 @@
+class ListingDay < ApplicationRecord
+end

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  headline: MyString
+  description: MyString
+  photo_url: MyString
+  channel_id: 1
+  external_id: 1
+  accommodates: 1
+  bedrooms: 1
+  bathrooms: 1
+  beds: 1
+  lat: 1.5
+  lng: 1.5
+  city: MyString
+
+two:
+  headline: MyString
+  description: MyString
+  photo_url: MyString
+  channel_id: 1
+  external_id: 1
+  accommodates: 1
+  bedrooms: 1
+  bathrooms: 1
+  beds: 1
+  lat: 1.5
+  lng: 1.5
+  city: MyString

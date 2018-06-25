@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  listing_id: 1
+  price: 1
+  price_on: 2018-06-24
+  blocked: false
+
+two:
+  listing_id: 1
+  price: 1
+  price_on: 2018-06-24
+  blocked: false

@@ -10,6 +10,21 @@ class AirbnbClient
     ENV['AIRBNB_KEY']
   end
 
+  def login(username, password)
+    data = {
+        username: username,
+        password: password,
+        prevent_account_creation: 'true'
+    }
+    headers = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'X-Airbnb-API-Key': client_id
+    }
+    result = post('/v1/authorize', {client_id: client_id}, data, headers)
+    result
+  end
+
   def events(listing_id, query_params={})
     query_params[:key] = key
     query_params[:currency] = 'USD'
@@ -71,6 +86,15 @@ class AirbnbClient
     url = construct_url(path, query_params)
     puts "Getting #{ url } with #{ query_params }"
     result = RestClient.get(url)
+    if result.code == 200
+      JSON.parse(result.body)
+    end
+  end
+
+  def post(path, query_params, payload, headers)
+    url = construct_url(path, query_params)
+    puts "Posting #{ url } with #{ payload }"
+    result = RestClient.post(url, payload, headers)
     if result.code == 200
       JSON.parse(result.body)
     end
